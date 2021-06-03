@@ -1,54 +1,49 @@
 ﻿@model LFHSystems.MyFellowGamer.WebApp.Models.UserViewModel
 
-<h4>UserModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="CreateUser">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ID" class="control-label"></label>
-                <input asp-for="ID" class="form-control" />
-                <span asp-validation-for="ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PIN" class="control-label"></label>
-                <input asp-for="PIN" class="form-control" />
-                <span asp-validation-for="PIN" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="TermsOfUse" /> @Html.DisplayNameFor(model => model.TermsOfUse)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="PrivacyPolicy" /> @Html.DisplayNameFor(model => model.PrivacyPolicy)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreationDate" class="control-label"></label>
-                <input asp-for="CreationDate" class="form-control" />
-                <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="CreateUser" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="modal-header">
+    <h4 class="modal-title">Join MyFellowGamer</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="CreateUser">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group col-md-10">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-9">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-9">
+                    <label asp-for="PIN" class="control-label"></label>
+                    <input asp-for="PIN" class="form-control" />
+                    <span asp-validation-for="PIN" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check col-md-11">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="TermsOfUse" /> @Html.DisplayNameFor(model => model.TermsOfUse)
+                    </label>
+                </div>
+                <div class="form-group form-check col-md-11">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="PrivacyPolicy" /> @Html.DisplayNameFor(model => model.PrivacyPolicy)
+                    </label>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="modal-footer">
+    <div class="form-group">
+        <input type="submit" value="CreateUser" class="btn btn-primary" />
+    </div>
 </div>
 

@@ -30,7 +30,7 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 
         public IActionResult Index()
         {
-            InsertTestUser();
+            //InsertTestUser();
             return View();
         }
 

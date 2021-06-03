@@ -2,7 +2,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @{
+               await Html.RenderPartialAsync("Create");
+            }
+        </div>
+    </div>
+</div>
 
-<a asp-controller="Login" asp-action="Create">Create user</a>
+@*<a asp-controller="Login" asp-action="Create">Create user</a>*@
+<a id="open-modal" class="btn-primary btn-link" data-toggle="modal" data-target="#showmodal">Create user</a>
 
