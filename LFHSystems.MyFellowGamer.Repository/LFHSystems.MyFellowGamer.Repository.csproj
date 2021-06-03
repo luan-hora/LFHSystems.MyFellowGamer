@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Interface\LFHSystems.MyFellowGamer.Interface.csproj" />
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Model\LFHSystems.MyFellowGamer.Model.csproj" />
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Utils\LFHSystems.MyFellowGamer.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

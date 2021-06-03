@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Model\LFHSystems.MyFellowGamer.Model.csproj" />
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Utils\LFHSystems.MyFellowGamer.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.Model", "LFHSystems.MyFellowGamer.Model\LFHSystems.MyFellowGamer.Model.csproj", "{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.Repository", "LFHSystems.MyFellowGamer.Repository\LFHSystems.MyFellowGamer.Repository.csproj", "{365F234B-CB10-46D5-AAFD-01D1C04426A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.Business", "LFHSystems.MyFellowGamer.Business\LFHSystems.MyFellowGamer.Business.csproj", "{5E7711ED-673A-4874-A088-9CBEE4C68E69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.Interface", "LFHSystems.MyFellowGamer.Interface\LFHSystems.MyFellowGamer.Interface.csproj", "{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7A2A0095-5E1D-4D11-9EC9-8FEA1A6AC047}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helper", "Helper", "{D40EF7C5-F861-4A49-948D-15B0512CBA55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{EF342B11-4666-4A6F-BBE7-29DFFDF02534}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.Utils", "LFHSystems.MyFellowGamer.Utils\LFHSystems.MyFellowGamer.Utils.csproj", "{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.WebApp", "LFHSystems.MyFellowGamer.WebApp\LFHSystems.MyFellowGamer.WebApp.csproj", "{6AF24476-FF02-4BD1-A640-209802CF2922}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{98A270B1-8345-4F87-AF15-9885BD969CAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.WebAPI", "LFHSystems.MyFellowGamer.WebAPI\LFHSystems.MyFellowGamer.WebAPI.csproj", "{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{365F234B-CB10-46D5-AAFD-01D1C04426A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{365F234B-CB10-46D5-AAFD-01D1C04426A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{365F234B-CB10-46D5-AAFD-01D1C04426A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{365F234B-CB10-46D5-AAFD-01D1C04426A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7711ED-673A-4874-A088-9CBEE4C68E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7711ED-673A-4874-A088-9CBEE4C68E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7711ED-673A-4874-A088-9CBEE4C68E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7711ED-673A-4874-A088-9CBEE4C68E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF24476-FF02-4BD1-A640-209802CF2922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF24476-FF02-4BD1-A640-209802CF2922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF24476-FF02-4BD1-A640-209802CF2922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF24476-FF02-4BD1-A640-209802CF2922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77E17A18-C410-41FE-9C4D-0C0EAA92E41C} = {7A2A0095-5E1D-4D11-9EC9-8FEA1A6AC047}
+		{365F234B-CB10-46D5-AAFD-01D1C04426A7} = {7A2A0095-5E1D-4D11-9EC9-8FEA1A6AC047}
+		{5E7711ED-673A-4874-A088-9CBEE4C68E69} = {7A2A0095-5E1D-4D11-9EC9-8FEA1A6AC047}
+		{15D3A72F-7D00-4E92-9DD2-EFFC559779C9} = {D40EF7C5-F861-4A49-948D-15B0512CBA55}
+		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094} = {D40EF7C5-F861-4A49-948D-15B0512CBA55}
+		{6AF24476-FF02-4BD1-A640-209802CF2922} = {EF342B11-4666-4A6F-BBE7-29DFFDF02534}
+		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74} = {98A270B1-8345-4F87-AF15-9885BD969CAE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C65D675-D857-4EFD-8648-489BCB54C22F}
+	EndGlobalSection
+EndGlobal
