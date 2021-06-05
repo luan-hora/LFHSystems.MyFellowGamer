@@ -2080,6 +2080,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "LFHSystems.MyFellowGamer.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "LFHSystems.MyFellowGamer.Model": "1.0.0",
+          "LFHSystems.MyFellowGamer.Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LFHSystems.MyFellowGamer.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LFHSystems.MyFellowGamer.Business.dll": {}
+        }
+      },
       "LFHSystems.MyFellowGamer.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2101,22 +2115,6 @@
         },
         "runtime": {
           "bin/placeholder/LFHSystems.MyFellowGamer.Model.dll": {}
-        }
-      },
-      "LFHSystems.MyFellowGamer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "LFHSystems.MyFellowGamer.Interface": "1.0.0",
-          "LFHSystems.MyFellowGamer.Model": "1.0.0",
-          "LFHSystems.MyFellowGamer.Utils": "1.0.0",
-          "System.Data.SqlClient": "4.8.2"
-        },
-        "compile": {
-          "bin/placeholder/LFHSystems.MyFellowGamer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LFHSystems.MyFellowGamer.Repository.dll": {}
         }
       },
       "LFHSystems.MyFellowGamer.Utils/1.0.0": {
@@ -7062,6 +7060,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "LFHSystems.MyFellowGamer.Business/1.0.0": {
+      "type": "project",
+      "path": "../LFHSystems.MyFellowGamer.Business/LFHSystems.MyFellowGamer.Business.csproj",
+      "msbuildProject": "../LFHSystems.MyFellowGamer.Business/LFHSystems.MyFellowGamer.Business.csproj"
+    },
     "LFHSystems.MyFellowGamer.Interface/1.0.0": {
       "type": "project",
       "path": "../LFHSystems.MyFellowGamer.Interface/LFHSystems.MyFellowGamer.Interface.csproj",
@@ -7071,11 +7074,6 @@
       "type": "project",
       "path": "../LFHSystems.MyFellowGamer.Model/LFHSystems.MyFellowGamer.Model.csproj",
       "msbuildProject": "../LFHSystems.MyFellowGamer.Model/LFHSystems.MyFellowGamer.Model.csproj"
-    },
-    "LFHSystems.MyFellowGamer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../LFHSystems.MyFellowGamer.Repository/LFHSystems.MyFellowGamer.Repository.csproj",
-      "msbuildProject": "../LFHSystems.MyFellowGamer.Repository/LFHSystems.MyFellowGamer.Repository.csproj"
     },
     "LFHSystems.MyFellowGamer.Utils/1.0.0": {
       "type": "project",
@@ -7087,9 +7085,9 @@
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
+      "LFHSystems.MyFellowGamer.Business >= 1.0.0",
       "LFHSystems.MyFellowGamer.Interface >= 1.0.0",
       "LFHSystems.MyFellowGamer.Model >= 1.0.0",
-      "LFHSystems.MyFellowGamer.Repository >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
     ]
   },
@@ -7128,14 +7126,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj": {
+              "projectPath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj"
+            },
             "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj": {
               "projectPath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj"
             },
             "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj": {
               "projectPath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj"
-            },
-            "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj": {
-              "projectPath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj"
             }
           }
         }

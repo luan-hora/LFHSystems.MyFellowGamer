@@ -1,6 +1,6 @@
 using LFHSystems.MyFellowGamer.Interface;
 using LFHSystems.MyFellowGamer.Model;
-using LFHSystems.MyFellowGamer.Repository;
+//using LFHSystems.MyFellowGamer.Repository;
 using LFHSystems.MyFellowGamer.WebApp.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +23,7 @@ namespace LFHSystems.MyFellowGamer.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<ICrud<UserModel>, UserRepository>();
+            //services.AddScoped<ICrud<UserModel>, UserRepository>();
 
             services.AddAutoMapper(typeof(AutoMapperConfig));
         }

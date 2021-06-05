@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Business\LFHSystems.MyFellowGamer.Business.csproj" />
     <ProjectReference Include="..\LFHSystems.MyFellowGamer.Interface\LFHSystems.MyFellowGamer.Interface.csproj" />
     <ProjectReference Include="..\LFHSystems.MyFellowGamer.Model\LFHSystems.MyFellowGamer.Model.csproj" />
-    <ProjectReference Include="..\LFHSystems.MyFellowGamer.Repository\LFHSystems.MyFellowGamer.Repository.csproj" />
   </ItemGroup>
 
 </Project>

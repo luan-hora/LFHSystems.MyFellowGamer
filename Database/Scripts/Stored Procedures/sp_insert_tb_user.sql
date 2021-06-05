@@ -12,3 +12,5 @@ AS
 	(Username, Email, PIN, TermsOfUse, PrivacyPolicy, CreationDate)
 	VALUES
 	(@username, @email, @pin, @TermsOfUse, @PrivacyPolicy, @CreationDate)
+	
+	SELECT ID FROM tb_user WHERE Username = @username

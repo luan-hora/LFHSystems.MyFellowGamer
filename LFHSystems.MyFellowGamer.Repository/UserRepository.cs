@@ -68,7 +68,7 @@ namespace LFHSystems.MyFellowGamer.Repository
             }
         }
 
-        public void Insert(UserModel pObj)
+        public void Insert(ref UserModel pObj)
         {
             try
             {
@@ -87,8 +87,10 @@ namespace LFHSystems.MyFellowGamer.Repository
                 comm.Parameters.Add(new SqlParameter("@creationDate", pObj.CreationDate));
 
                 comm.Connection.Open();
-                comm.ExecuteNonQuery();
+                int id = comm.ExecuteScalar().ToInt();
                 comm.Connection.Close();
+
+                pObj.ID = id;
             }
             catch (SqlException ex)
             {

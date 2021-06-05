@@ -5,45 +5,57 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
 
-<div class="modal-body">
-    <div class="row">
-        <div class="col-md-12">
-            <form asp-action="CreateUser">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form id="frmSignUp" asp-action="SignUpUser">
+    <div class="modal-body">
+        <div class="row">
+            <input type="hidden" asp-for="IsTrue" value="true" />
+            <div class="col-md-12">
                 <div class="form-group col-md-10">
                     <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
+                    <input id="txtEmail" asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-9">
                     <label asp-for="Username" class="control-label"></label>
-                    <input asp-for="Username" class="form-control" />
+                    <input id="txtUsername" asp-for="Username" class="form-control" />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
 
                 <div class="form-group col-md-9">
                     <label asp-for="PIN" class="control-label"></label>
-                    <input asp-for="PIN" class="form-control" />
+                    <input id="txtPassword" type="password" asp-for="PIN" class="form-control" />
                     <span asp-validation-for="PIN" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check col-md-11">
                     <label class="form-check-label">
-                        <input class="form-check-input" asp-for="TermsOfUse" /> @Html.DisplayNameFor(model => model.TermsOfUse)
+                        <input id="chkTermsOfUse" class="form-check-input" asp-for="TermsOfUse" /> @Html.DisplayNameFor(model => model.TermsOfUse)
+                        <span asp-validation-for="TermsOfUse" class="text-danger"></span>
                     </label>
                 </div>
                 <div class="form-group form-check col-md-11">
                     <label class="form-check-label">
-                        <input class="form-check-input" asp-for="PrivacyPolicy" /> @Html.DisplayNameFor(model => model.PrivacyPolicy)
+                        <input id="chkPrivacyPolicy" class="form-check-input" asp-for="PrivacyPolicy" /> @Html.DisplayNameFor(model => model.PrivacyPolicy)
+                        <span asp-validation-for="PrivacyPolicy" class="text-danger"></span>
                     </label>
                 </div>
-            </form>
+
+            </div>
         </div>
     </div>
-</div>
-
-<div class="modal-footer">
-    <div class="form-group">
-        <input type="submit" value="CreateUser" class="btn btn-primary" />
+    <div class="modal-footer">
+        <div class="form-group">
+            <input id="btnSignUp" type="submit" value="Sign up" class="btn btn-primary" />
+        </div>
     </div>
-</div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
 

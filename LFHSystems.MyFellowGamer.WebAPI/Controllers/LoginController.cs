@@ -16,22 +16,22 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     public class LoginController : Controller
     {
         IConfiguration _configuration;
+        UserRepository repo;
         public LoginController(IConfiguration configuration)
         {
             _configuration = configuration;
+
+            repo = new UserRepository(_configuration);
         }
 
         [HttpPost]
         [Route("Insert")]
-        public UserModel Insert([FromBody] UserModel pUser)
+        public JsonResult Insert([FromBody] UserModel pUser)
         {
-            UserRepository repo = new UserRepository(_configuration);
-            repo.Insert(pUser);
+            pUser.CreationDate = DateTime.Now;
+            repo.Insert(ref pUser);
 
-            //UserRepository repo = new UserRepository();
-            //pUser.ID = 2;
-
-            return pUser;
+            return Json(pUser);
         }
 
         [HttpGet]

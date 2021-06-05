@@ -6,12 +6,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             @{
-               await Html.RenderPartialAsync("Create");
+                await Html.RenderPartialAsync("Create");
             }
         </div>
     </div>
 </div>
 
-@*<a asp-controller="Login" asp-action="Create">Create user</a>*@
 <a id="open-modal" class="btn-primary btn-link" data-toggle="modal" data-target="#showmodal">Create user</a>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
