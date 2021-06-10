@@ -35,6 +35,25 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("GetUserByEmail/{pEmail}")]
+        public JsonResult GetUserByEmail(string pEmail)
+        {
+            UserModel ret = repo.GetByParameter(new UserModel() { Email = pEmail });
+
+            return Json(ret);
+        }
+
+        [HttpGet]
+        [Route("GetUserByUsername/{pUsername}")]
+        public JsonResult GetUserByUsername(string pUsername)
+        {
+            UserModel ret = repo.GetByParameter(new UserModel() { Username = pUsername });
+
+            return Json(ret);
+        }
+
+
+        [HttpGet]
         [Route("GetUserForLogin/{pObj}")]
         public UserModel GetUserForLogin(string pObj)
         {

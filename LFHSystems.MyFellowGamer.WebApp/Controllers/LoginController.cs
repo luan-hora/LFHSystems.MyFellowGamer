@@ -31,6 +31,31 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
             return View();
         }
 
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SignIn(SignInViewModel pObj)
+        {
+            usrBus.AuthenticateUser(_mapper.Map<SignInModel>(pObj));
+
+            return View();
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult SignInUser(SignInViewModel pObj)
+        //{
+        //    //UserModel ret = usrBus.SignupNewUser(_mapper.Map<UserModel>(pObj));
+
+        //    //pObj = _mapper.Map<UserViewModel>(ret);
+
+        //    return View("Index");
+        //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SignUpUser(UserViewModel pObj)
