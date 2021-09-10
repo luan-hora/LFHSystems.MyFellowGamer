@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LFHSystems.MyFellowGamer.Business\LFHSystems.MyFellowGamer.Business.csproj" />
     <ProjectReference Include="..\LFHSystems.MyFellowGamer.Model\LFHSystems.MyFellowGamer.Model.csproj" />
     <ProjectReference Include="..\LFHSystems.MyFellowGamer.Repository\LFHSystems.MyFellowGamer.Repository.csproj" />

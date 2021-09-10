@@ -40,9 +40,12 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult SignIn(SignInViewModel pObj)
         {
-            usrBus.AuthenticateUser(_mapper.Map<SignInModel>(pObj));
+            bool loginSuccess = usrBus.AuthenticateUser(_mapper.Map<SignInModel>(pObj));
 
-            return View();
+            if (loginSuccess)
+                return RedirectToAction("");
+
+            return View(pObj);
         }
 
         //[HttpPost]
