@@ -12,5 +12,21 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult InsertNewGame(UserViewModel pObj)
+        //{
+        //    UserModel ret = usrBus.SignupNewUser(_mapper.Map<UserModel>(pObj));
+
+        //    pObj = _mapper.Map<UserViewModel>(ret);
+
+        //    return View("Index");
+        //}
     }
 }

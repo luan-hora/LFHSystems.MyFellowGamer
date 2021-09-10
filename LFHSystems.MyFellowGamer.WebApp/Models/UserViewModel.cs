@@ -26,18 +26,15 @@ namespace LFHSystems.MyFellowGamer.WebApp.Models
         public bool IsTrue
         { get { return true; } }
 
-        //[Required]
         [Compare("IsTrue", ErrorMessage = "Please agree to Terms of Use")]
         [Display(Name = "I'm at least 16 years old and accept the Terms of Use")]
         public bool TermsOfUse { get; set; }
-        //[Required]
+
         [Compare("IsTrue", ErrorMessage = "Please agree to the Privacy Policy")]
         [Display(Name = "I accept the Privacy Policy and consent to the processing of my personal information in accordance with it.")]
         public bool PrivacyPolicy { get; set; }
         #endregion
 
         public DateTime CreationDate { get; set; }
-
-
     }
 }

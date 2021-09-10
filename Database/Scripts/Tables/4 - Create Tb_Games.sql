@@ -1,0 +1,21 @@
+USE DBMyFellowGamer
+GO
+IF (NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND  TABLE_NAME = 'Tb_Games') )
+BEGIN
+	CREATE TABLE Tb_Games (
+		ID INT IDENTITY(1, 1),
+		Title NVARCHAR(300) NOT NULL,
+		ReleaseDate DATETIME NOT NULL,
+		PlatformsAvailable NVARCHAR(300) NOT NULL,
+		DeveloperId INT NOT NULL,
+		PublisherId INT NOT NULL,
+	
+		CONSTRAINT PK_Tb_Games PRIMARY KEY (ID),
+		CONSTRAINT FK_Tb_Games_Tb_Developers FOREIGN KEY (DeveloperId) REFERENCES Tb_Developers (ID),
+		CONSTRAINT FK_Tb_Games_Tb_Publishers FOREIGN KEY (PublisherId) REFERENCES Tb_Publishers (ID)
+	);
+END;
+ELSE
+BEGIN
+	PRINT 'Tabela já existe!';
+END
