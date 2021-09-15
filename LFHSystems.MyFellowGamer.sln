@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{98A270B1-834
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.WebAPI", "LFHSystems.MyFellowGamer.WebAPI\LFHSystems.MyFellowGamer.WebAPI.csproj", "{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TDD", "TDD", "{C0C2B6D3-AAA1-42C3-86F8-E61AB029379F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFHSystems.MyFellowGamer.UnitTesting", "LFHSystems.MyFellowGamer.UnitTesting\LFHSystems.MyFellowGamer.UnitTesting.csproj", "{26248DEA-4B79-4242-A092-4C173720B2A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26248DEA-4B79-4242-A092-4C173720B2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26248DEA-4B79-4242-A092-4C173720B2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26248DEA-4B79-4242-A092-4C173720B2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26248DEA-4B79-4242-A092-4C173720B2A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,7 @@ Global
 		{DCDFFBBC-A0A6-431C-BB94-87F1A3320094} = {D40EF7C5-F861-4A49-948D-15B0512CBA55}
 		{6AF24476-FF02-4BD1-A640-209802CF2922} = {EF342B11-4666-4A6F-BBE7-29DFFDF02534}
 		{F5E01687-6D9B-42BC-92AF-2EC9C7593E74} = {98A270B1-8345-4F87-AF15-9885BD969CAE}
+		{26248DEA-4B79-4242-A092-4C173720B2A5} = {C0C2B6D3-AAA1-42C3-86F8-E61AB029379F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C65D675-D857-4EFD-8648-489BCB54C22F}

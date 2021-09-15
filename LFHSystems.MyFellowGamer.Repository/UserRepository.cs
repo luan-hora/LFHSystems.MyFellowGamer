@@ -39,7 +39,8 @@ namespace LFHSystems.MyFellowGamer.Repository
                     object username = new { username = pObj.Username };
 
 
-                    var result = dbConnection.QueryFirstOrDefault<UserModel>("dbo.sp_select_tb_user", pObj.Email.IsNullOrEmpty() ? username : email, commandType: CommandType.StoredProcedure);
+                    var result = dbConnection.QueryFirstOrDefault<UserModel>("dbo.sp_select_tb_user", 
+                        pObj.Email.IsNullOrEmpty() ? username : email, commandType: CommandType.StoredProcedure);
                     ret = result;
 
                     dbConnection.Close();

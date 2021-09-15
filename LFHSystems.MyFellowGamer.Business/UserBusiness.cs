@@ -12,10 +12,8 @@ namespace LFHSystems.MyFellowGamer.Business
 {
     public class UserBusiness : BaseBusiness<UserModel>
     {
-        IConfiguration _configuration;
-        public UserBusiness(IConfiguration configuration)
+        public UserBusiness(IConfiguration configuration) : base(configuration)
         {
-            _configuration = configuration;
         }
 
         public UserModel SignupNewUser(UserModel pObj)
@@ -59,29 +57,12 @@ namespace LFHSystems.MyFellowGamer.Business
                 emailRegex.Append(@"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\");
                 emailRegex.Append(@".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
 
-                ////Validate email format
-                //string emailRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                //                       @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                //                          @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
-
                 Regex re = new Regex(emailRegex.ToString());
                 if (re.IsMatch(usernameOrEmail))
                     return true;
             }
 
             return false;
-            //else
-            //{
-            //    //validate Username format
-            //    string emailRegex = @"^[a-zA-Z0-9]*$";
-            //    Regex re = new Regex(emailRegex);
-            //    if (!re.IsMatch(model.Email))
-            //    {
-            //        ModelState.AddModelError("Email", "Username is not valid");
-            //    }
-            //}
-
-            //return usernameOrEmail.Contains("@");
         }
 
         public override bool ValidateModel(UserModel pObj)
