@@ -7,15 +7,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Dapper;
 
 namespace LFHSystems.MyFellowGamer.Repository
 {
     public class UserRepository : ICrud<UserModel>
     {
         private IConfiguration _configuration;
-        public UserRepository(IConfiguration configuration)
+        private IConnectionFactory _connection;
+        public UserRepository(IConfiguration configuration/*, IConnectionFactory connection*/)
         {
             _configuration = configuration;
+            _connection = new SqlConnectionFactory(configuration);
         }
 
         public IEnumerable<UserModel> GetAll()
@@ -28,35 +31,51 @@ namespace LFHSystems.MyFellowGamer.Repository
             UserModel ret = null;
             try
             {
-                StringBuilder str = new StringBuilder();
-                str.Append("dbo.sp_select_tb_user");
-
-                SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("MyFellowGamerConnString"));
-                SqlCommand comm = new SqlCommand(str.ToString(), conn);
-                comm.CommandType = CommandType.StoredProcedure;
-
-                comm.Parameters.Add(pObj.Email.IsNullOrEmpty() ? new SqlParameter("@username", pObj.Username) : new SqlParameter("@email", pObj.Email));
-
-                comm.Connection.Open();
-                SqlDataReader dr = comm.ExecuteReader();
-
-                while (dr.Read())
+                using (var dbConnection = _connection.ConnString())
                 {
-                    ret = new UserModel()
-                    {
-                        ID = dr["ID"].ToInt(),
-                        Username = dr["Username"].ToString(),
-                        Email = dr["Email"].ToString(),
-                        PIN = dr["PIN"].ToString(),
-                        CreationDate = dr["CreationDate"].ToDateTime(),
-                        PrivacyPolicy = dr["PrivacyPolicy"].GetBoolFromBit(),
-                        TermsOfUse = dr["TermsOfUse"].GetBoolFromBit()
-                    };
+                    dbConnection.Open();
+
+                    object email = new { email = pObj.Email };
+                    object username = new { username = pObj.Username };
+
+
+                    var result = dbConnection.QueryFirstOrDefault<UserModel>("dbo.sp_select_tb_user", pObj.Email.IsNullOrEmpty() ? username : email);
+                    ret = result;
+
+                    dbConnection.Close();
                 }
 
-                comm.Connection.Close();
-
                 return ret;
+
+                //StringBuilder str = new StringBuilder();
+                //str.Append("dbo.sp_select_tb_user");
+
+                //SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("MyFellowGamerConnString"));
+                //SqlCommand comm = new SqlCommand(str.ToString(), conn);
+                //comm.CommandType = CommandType.StoredProcedure;
+
+                //comm.Parameters.Add(pObj.Email.IsNullOrEmpty() ? new SqlParameter("@username", pObj.Username) : new SqlParameter("@email", pObj.Email));
+
+                //comm.Connection.Open();
+                //SqlDataReader dr = comm.ExecuteReader();
+
+                //while (dr.Read())
+                //{
+                //    ret = new UserModel()
+                //    {
+                //        ID = dr["ID"].ToInt(),
+                //        Username = dr["Username"].ToString(),
+                //        Email = dr["Email"].ToString(),
+                //        PIN = dr["PIN"].ToString(),
+                //        CreationDate = dr["CreationDate"].ToDateTime(),
+                //        PrivacyPolicy = dr["PrivacyPolicy"].GetBoolFromBit(),
+                //        TermsOfUse = dr["TermsOfUse"].GetBoolFromBit()
+                //    };
+                //}
+
+                //comm.Connection.Close();
+
+                //return ret;
             }
             catch (SqlException ex)
             {
@@ -72,25 +91,44 @@ namespace LFHSystems.MyFellowGamer.Repository
         {
             try
             {
-                StringBuilder str = new StringBuilder();
-                str.Append("dbo.sp_insert_tb_user");
+                using (var dbConnection = _connection.ConnString())
+                {
+                    dbConnection.Open();
 
-                SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("MyFellowGamerConnString"));
-                SqlCommand comm = new SqlCommand(str.ToString(), conn);
-                comm.CommandType = CommandType.StoredProcedure;
+                    int id = dbConnection.Execute("dbo.sp_insert_tb_user", new
+                    {
+                        username = pObj.Username,
+                        email = pObj.Email,
+                        pin = pObj.PIN,
+                        termsOfUse = pObj.TermsOfUse.GetBitFromBool(),
+                        privacyPolicy = pObj.PrivacyPolicy.GetBitFromBool(),
+                        creationDate = pObj.CreationDate
+                    });
 
-                comm.Parameters.Add(new SqlParameter("@username", pObj.Username));
-                comm.Parameters.Add(new SqlParameter("@email", pObj.Email));
-                comm.Parameters.Add(new SqlParameter("@pin", pObj.PIN));
-                comm.Parameters.Add(new SqlParameter("@termsOfUse", pObj.TermsOfUse.GetBitFromBool()));
-                comm.Parameters.Add(new SqlParameter("@privacyPolicy", pObj.PrivacyPolicy.GetBitFromBool()));
-                comm.Parameters.Add(new SqlParameter("@creationDate", pObj.CreationDate));
+                    pObj.ID = id;
 
-                comm.Connection.Open();
-                int id = comm.ExecuteScalar().ToInt();
-                comm.Connection.Close();
+                    dbConnection.Close();
+                }
 
-                pObj.ID = id;
+                //StringBuilder str = new StringBuilder();
+                //str.Append("dbo.sp_insert_tb_user");
+
+                //SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("MyFellowGamerConnString"));
+                //SqlCommand comm = new SqlCommand(str.ToString(), conn);
+                //comm.CommandType = CommandType.StoredProcedure;
+
+                //comm.Parameters.Add(new SqlParameter("@username", pObj.Username));
+                //comm.Parameters.Add(new SqlParameter("@email", pObj.Email));
+                //comm.Parameters.Add(new SqlParameter("@pin", pObj.PIN));
+                //comm.Parameters.Add(new SqlParameter("@termsOfUse", pObj.TermsOfUse.GetBitFromBool()));
+                //comm.Parameters.Add(new SqlParameter("@privacyPolicy", pObj.PrivacyPolicy.GetBitFromBool()));
+                //comm.Parameters.Add(new SqlParameter("@creationDate", pObj.CreationDate));
+
+                //comm.Connection.Open();
+                //int id = comm.ExecuteScalar().ToInt();
+                //comm.Connection.Close();
+
+                //pObj.ID = id;
             }
             catch (SqlException ex)
             {
