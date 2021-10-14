@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gkmy4u8277Ol7H/+eCrVgp2/VhJ7BW7TZC04w5npF+gevRm8ERbzEaqRgzhscIlDmInLVntWJumfQfwEpLGp1A==",
+  "dgSpecHash": "pCaSv0jkNaez5n5LtVyRn0sBkjAfICGzfEOVUh+AUKNMjz7dPTlx/xz9CGxznSw/zvwtMLP6/0Xlj0NewAZaDA==",
   "success": true,
   "projectFilePath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\luan-\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
-    "C:\\Users\\luan-\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\luan-\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",

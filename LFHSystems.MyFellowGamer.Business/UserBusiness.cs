@@ -27,7 +27,6 @@ namespace LFHSystems.MyFellowGamer.Business
             return pObj;
         }
 
-        //public bool AuthenticateUser(UserModel pObj)
         public bool AuthenticateUser(SignInModel pObj)
         {
             bool email = CheckLoginMethod(pObj.EmailOrUsername);
@@ -49,7 +48,6 @@ namespace LFHSystems.MyFellowGamer.Business
 
         private bool CheckLoginMethod(string usernameOrEmail)
         {
-
             if (usernameOrEmail.IndexOf('@') > -1)
             {
                 StringBuilder emailRegex = new StringBuilder();
@@ -72,7 +70,8 @@ namespace LFHSystems.MyFellowGamer.Business
                 pObj.PIN.IsNullOrEmpty())
                 return false;
 
-            //TODO: Add validation for boolean fields (Privacy Policy, TermsOfUse)
+            if (!pObj.PrivacyPolicy || !pObj.TermsOfUse)
+                return false;
 
             return true;
         }

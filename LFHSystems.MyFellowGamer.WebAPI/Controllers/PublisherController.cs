@@ -1,5 +1,16 @@
-﻿using LFHSystems.MyFellowGamer.Model;
+﻿//using LFHSystems.MyFellowGamer.Model;
+//using LFHSystems.MyFellowGamer.Repository;
+//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.Extensions.Configuration;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
+
+using LFHSystems.MyFellowGamer.Business;
+using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.Repository;
+using LFHSystems.MyFellowGamer.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -11,7 +22,7 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PublisherController : ControllerBase
+    public class PublisherController : Controller
     {
         IConfiguration _configuration;
         PublisherRepository repo;
@@ -24,12 +35,13 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
 
         [HttpPost]
         [Route("Insert")]
-        public async Task<ActionResult<PublisherModel>> Insert([FromBody] PublisherModel pPublisher)
+        //public async Task<ActionResult<PublisherModel>> Insert([FromBody] PublisherModel pPublisher)
+        public JsonResult Insert([FromBody] PublisherModel pPublisher)
         {
             pPublisher.CreationDate = DateTime.Now;
-            await repo.Insert(pPublisher);
+            repo.Insert(ref pPublisher);
 
-            return pPublisher;
+            return Json(pPublisher);
         }
 
         //// GET: api/<PublisherController>

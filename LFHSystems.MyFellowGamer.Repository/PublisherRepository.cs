@@ -31,12 +31,12 @@ namespace LFHSystems.MyFellowGamer.Repository
             throw new NotImplementedException();
         }
 
-        public void Insert(ref PublisherModel pObj)
-        {
-            throw new NotImplementedException();
-        }
+        //public void Insert(ref PublisherModel pObj)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task Insert(PublisherModel pObj)
+        public void Insert(ref PublisherModel pObj)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace LFHSystems.MyFellowGamer.Repository
                     dbConnection.Close();
                 }
 
-                return null;
+                //return new Task(pObj>;
             }
             catch (SqlException ex)
             {

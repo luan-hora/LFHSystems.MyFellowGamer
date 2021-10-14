@@ -23,8 +23,6 @@ namespace LFHSystems.MyFellowGamer.Business
             string response = APIConsume.ApiPostAsync($"{_configuration.GetSection("ApiAddresses:WebApiMFG").Value}/Publisher/Insert", content).Result;
 
             return pObj;
-
-            return null;
         }
 
         public override bool ValidateModel(PublisherModel pObj)

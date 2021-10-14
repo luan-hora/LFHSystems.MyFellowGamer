@@ -9,7 +9,6 @@ namespace LFHSystems.MyFellowGamer.Utils.API
 {
     public static class APIConsume
     {
-        //public async Task<string> ApiPostAsync(string pUrl, StringContent pContent)
         public static async Task<string> ApiPostAsync(string pUrl, StringContent pContent)
         {
             string ret = null;

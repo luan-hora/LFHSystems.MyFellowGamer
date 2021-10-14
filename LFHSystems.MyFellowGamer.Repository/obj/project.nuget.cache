@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4ySQoF4SYfKtNJYY2T12KS6pNpEyfUXvJ1aCe5GEadRe2qlfVBpWPOk0bcP3P6Vuj6NSj9aHkArGteV4+9FKxQ==",
+  "dgSpecHash": "gMBBzn7Tz0HHoKnhaeuiNFIQT66B9P2H9TerFy5+QrXM5lrq7UwzRaNnMKPacFN7l9EptVogkP7vlvI5oJh+4w==",
   "success": true,
   "projectFilePath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,7 @@
     "C:\\Users\\luan-\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
-    "C:\\Users\\luan-\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\luan-\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",

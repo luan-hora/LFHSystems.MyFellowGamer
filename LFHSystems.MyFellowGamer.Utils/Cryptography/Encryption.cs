@@ -17,7 +17,7 @@ namespace LFHSystems.MyFellowGamer.Utils.Cryptography
             }
             catch (Exception ex)
             {
-                throw new Exception($"Erro encrypting password: {ex.Message}");
+                throw new Exception($"Error encrypting password: {ex.Message}");
             }
         }
 

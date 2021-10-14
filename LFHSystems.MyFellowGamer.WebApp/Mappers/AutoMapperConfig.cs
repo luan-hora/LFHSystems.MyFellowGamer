@@ -14,6 +14,7 @@ namespace LFHSystems.MyFellowGamer.WebApp.Mappers
         {
             CreateMap<UserViewModel, UserModel>().ReverseMap();
             CreateMap<SignInViewModel, SignInModel>().ReverseMap();
+            CreateMap<PublisherViewModel, PublisherModel>().ReverseMap();
         }
     }
 }

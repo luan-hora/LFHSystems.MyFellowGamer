@@ -23,7 +23,7 @@ namespace LFHSystems.MyFellowGamer.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddScoped<ICrud<UserModel>, UserRepository>();
+            //services.AddControllersWithViews()
 
             services.AddAutoMapper(typeof(AutoMapperConfig));
         }
