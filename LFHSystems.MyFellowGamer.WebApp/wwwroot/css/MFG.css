@@ -1,0 +1,14 @@
+﻿body {
+    background-color: #3C4B4D;
+    color:white;
+}
+
+header nav.navbar {
+    background-color: #3C4B4D;
+    color:white;
+}
+
+.btn:hover {
+    background-color:grey;
+    border-color:yellow;
+}

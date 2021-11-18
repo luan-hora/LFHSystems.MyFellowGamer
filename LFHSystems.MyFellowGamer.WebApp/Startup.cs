@@ -23,7 +23,7 @@ namespace LFHSystems.MyFellowGamer.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddControllersWithViews()
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddAutoMapper(typeof(AutoMapperConfig));
         }
