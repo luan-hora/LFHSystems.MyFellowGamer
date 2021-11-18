@@ -63,11 +63,21 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult SignUpUser(UserViewModel pObj)
         {
-            UserModel ret = usrBus.SignupNewUser(_mapper.Map<UserModel>(pObj));
+            try
+            {
+                UserModel ret = usrBus.SignupNewUser(_mapper.Map<UserModel>(pObj));
 
-            pObj = _mapper.Map<UserViewModel>(ret);
+                pObj = _mapper.Map<UserViewModel>(ret);
 
-            return View("Index");
+                ViewBag.successMessage = "User signUp success";
+                return View("Index");
+            }
+            catch (System.Exception ex)
+            {
+                ViewBag.failureMessage = "Failure";
+
+                throw;
+            }
         }
 
         //private void InsertTestUser()

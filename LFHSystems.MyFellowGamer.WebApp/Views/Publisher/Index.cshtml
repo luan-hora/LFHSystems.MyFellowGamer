@@ -10,6 +10,19 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        @*@if (!string.IsNullOrEmpty(ViewBag.successMessage))
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.successMessage;
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(ViewBag.failureMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.failureMessage
+            </div>
+        }*@
+
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">

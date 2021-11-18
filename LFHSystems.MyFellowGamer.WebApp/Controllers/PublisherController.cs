@@ -55,11 +55,13 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 
                 pObj = _mapper.Map<PublisherViewModel>(ret);
 
-                return RedirectToAction(nameof(Index));
+                ViewBag.successMessage = "Success";
+                return View("Index");
             }
             catch
             {
-                return View();
+                ViewBag.failureMessage = "Failure";
+                return View("Index");
             }
         }
 
