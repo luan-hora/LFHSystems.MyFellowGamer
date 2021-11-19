@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LFHSystems.MyFellowGamer.Model;
+using LFHSystems.MyFellowGamer.Utils.Extensions;
 
 namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 {
@@ -43,11 +44,14 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         {
             return View();
         }
+        //[BindProperty]
+        //public string Name { get; set; }
+
 
         // POST: PublisherController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] PublisherViewModel pObj)
+        [ValidateAntiForgeryToken]        
+        public IActionResult Create([FromForm] PublisherViewModel pObj)
         {
             try
             {
@@ -56,7 +60,8 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
                 pObj = _mapper.Map<PublisherViewModel>(ret);
 
                 ViewBag.successMessage = "Success";
-                return View("Index");
+                //return View("Index");
+                return Content(ret.ToJson());
             }
             catch
             {

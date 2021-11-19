@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6/w6UE0Sncz6TeCd6L9i6OFSTKE3VMSsYv5W5SRCLDfqUmzZ0jiIaGVgYhcGXgn8pHdLDyp7PQrvhc1P+h5KOQ==",
+  "dgSpecHash": "Y8706/GqRITSzbSoSij5QCQpmA22qfsB3ZJJx8HmMeaLufRCYTH8HE7hnFxVqzAn8nNGRGwUj4wmsa5xvacfEg==",
   "success": true,
   "projectFilePath": "C:\\Projects_LFH\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\luan-\\.nuget\\packages\\microsoft.typescript.msbuild\\4.5.2\\microsoft.typescript.msbuild.4.5.2.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\5.0.2\\microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\5.0.2\\microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
     "C:\\Users\\luan-\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\5.0.2\\microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",
