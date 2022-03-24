@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
-using Microsoft.Extensions.Configuration;
 using LFHSystems.MyFellowGamer.Business;
+using LFHSystems.MyFellowGamer.Model;
+using LFHSystems.MyFellowGamer.Utils.Extensions;
 using LFHSystems.MyFellowGamer.WebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LFHSystems.MyFellowGamer.Model;
-using LFHSystems.MyFellowGamer.Utils.Extensions;
+using Microsoft.Extensions.Configuration;
 
 namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 {

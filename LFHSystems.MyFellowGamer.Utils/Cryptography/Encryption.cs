@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace LFHSystems.MyFellowGamer.Utils.Cryptography
@@ -11,7 +10,7 @@ namespace LFHSystems.MyFellowGamer.Utils.Cryptography
             try
             {
                 byte[] encData_byte = new byte[pPassword.Length];
-                encData_byte = System.Text.Encoding.UTF8.GetBytes(pPassword);
+                encData_byte = Encoding.UTF8.GetBytes(pPassword);
                 string encodedData = Convert.ToBase64String(encData_byte);
                 return encodedData;
             }
@@ -23,8 +22,8 @@ namespace LFHSystems.MyFellowGamer.Utils.Cryptography
 
         public static string DecodePasswordFromBase64(string pPassword)
         {
-            System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
-            System.Text.Decoder utf8Decode = encoder.GetDecoder();
+            UTF8Encoding encoder = new System.Text.UTF8Encoding();
+            Decoder utf8Decode = encoder.GetDecoder();
             byte[] todecode_byte = Convert.FromBase64String(pPassword);
             int charCount = utf8Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
             char[] decoded_char = new char[charCount];
