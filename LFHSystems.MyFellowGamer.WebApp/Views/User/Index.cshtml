@@ -1,0 +1,67 @@
+﻿@model List<LFHSystems.MyFellowGamer.WebApp.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "List of Users";
+}
+
+<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @{
+                await Html.RenderPartialAsync("Create", new LFHSystems.MyFellowGamer.WebApp.Models.UserViewModel());
+            }
+        </div>
+    </div>
+</div>
+
+<a id="open-modal" class="btn-primary btn-link" data-toggle="modal" data-target="#showmodal">Create user</a>
+
+<div class="container">
+    <table id="gridUsers" class="table table-dark">
+        <thead>
+            <tr>
+                <th class="col-md-1">ID</th>
+                <th class="col-md-2">Username</th>
+                <th class="col-md-3">E-mail</th>
+                <th class="col-md-3">PIN</th>
+                <th class="col-md-1">Terms of Use</th>
+                <th class="col-md-1">Privacy Policy</th>
+                <th class="col-md-1">Creation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="col-md-1">
+                            @item.ID
+                        </td>
+                        <td class="col-md-2">
+                            @item.Username
+                        </td>
+                        <td class="col-md-3">
+                            @item.Email
+                        </td>
+                        <td class="col-md-3">
+                            @item.PIN
+                        </td>
+                        <td class="col-md-1">
+                            @item.TermsOfUse
+                        </td>
+                        <td class="col-md-1">
+                            @item.PrivacyPolicy
+                        </td>
+                        <td class="col-md-1">
+                            @item.CreationDate
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

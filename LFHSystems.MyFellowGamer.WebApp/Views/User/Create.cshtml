@@ -1,0 +1,75 @@
+﻿@model LFHSystems.MyFellowGamer.WebApp.Models.UserViewModel
+
+<div class="modal-header">
+    <h4 class="modal-title">Join MyFellowGamer</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<form id="frmSignUp" asp-action="SignUpUser" method="post" data-ajax="true" data-ajax-success="success" data-ajax-failure="failure">
+    <div class="modal-body">
+        <div class="row">
+            <input type="hidden" asp-for="IsTrue" value="true" />
+            <div class="col-md-12">
+                <div class="form-group col-md-10">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input id="txtEmail" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-9">
+                    <label asp-for="Username" class="control-label"></label>
+                    <input id="txtUsername" asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-9">
+                    <label asp-for="PIN" class="control-label"></label>
+                    <input id="txtPassword" type="password" asp-for="PIN" class="form-control" />
+                    <span asp-validation-for="PIN" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check col-md-11">
+                    <label class="form-check-label">
+                        <input id="chkTermsOfUse" class="form-check-input" asp-for="TermsOfUse" /> @Html.DisplayNameFor(model => model.TermsOfUse)
+                        <span asp-validation-for="TermsOfUse" class="text-danger"></span>
+                    </label>
+                </div>
+                <div class="form-group form-check col-md-11">
+                    <label class="form-check-label">
+                        <input id="chkPrivacyPolicy" class="form-check-input" asp-for="PrivacyPolicy" /> @Html.DisplayNameFor(model => model.PrivacyPolicy)
+                        <span asp-validation-for="PrivacyPolicy" class="text-danger"></span>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="form-group">
+            <input id="btnSignUp" type="submit" value="Sign up" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/lib/node_modules/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script type="text/javascript">
+        success = function (xhr) {
+            debugger;
+            Swal.fire(
+                'Good job!',
+                'You created a new Publisher!',
+                'success'
+            )
+        };
+
+        failure = function (xhr) {
+            Swal.fire(
+                'Oh shit, here we go again!',
+                'Things Went Wrong',
+                'error'
+            )
+        }
+    </script>
+}

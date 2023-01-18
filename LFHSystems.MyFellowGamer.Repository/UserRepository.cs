@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using Dapper;
+using System.Linq;
 
 namespace LFHSystems.MyFellowGamer.Repository
 {
@@ -23,7 +24,29 @@ namespace LFHSystems.MyFellowGamer.Repository
 
         public IEnumerable<UserModel> GetAll()
         {
-            throw new NotImplementedException();
+            List<UserModel> ret = null;
+            StringBuilder sqlQuery = new StringBuilder();
+            sqlQuery.AppendLine("SELECT ID, Username, Email, PIN, TermsOfUse, PrivacyPolicy, CreationDate FROM Tb_User");
+
+            try
+            {
+                using (var dbConnection = _connection.ConnString())
+                {
+                    dbConnection.Open();
+                    ret = dbConnection.Query<UserModel>(sqlQuery.ToString(), commandType: CommandType.Text).ToList();                    
+                    dbConnection.Close();
+                }                                
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return ret;
         }
 
         public UserModel GetByParameter(UserModel pObj)
@@ -39,7 +62,7 @@ namespace LFHSystems.MyFellowGamer.Repository
                     object username = new { username = pObj.Username };
 
 
-                    var result = dbConnection.QueryFirstOrDefault<UserModel>("dbo.sp_select_tb_user", 
+                    var result = dbConnection.QueryFirstOrDefault<UserModel>("dbo.sp_select_tb_user",
                         pObj.Email.IsNullOrEmpty() ? username : email, commandType: CommandType.StoredProcedure);
                     ret = result;
 

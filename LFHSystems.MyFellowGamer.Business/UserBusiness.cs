@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using LFHSystems.MyFellowGamer.Utils.Cryptography;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace LFHSystems.MyFellowGamer.Business
 {
@@ -25,6 +26,17 @@ namespace LFHSystems.MyFellowGamer.Business
             string response = APIConsume.ApiPostAsync($"{_configuration.GetSection("ApiAddresses:WebApiMFG").Value}/Login/Insert", content).Result;
 
             return pObj;
+        }
+
+        public List<UserModel> GetExistingUsers(UserModel pObj)
+        {
+            List<UserModel> ret = null;
+
+            StringContent content = new StringContent(pObj.ToJson(), Encoding.UTF8, "application/json");
+            string response = APIConsume.ApiGetAsync($"{_configuration.GetSection("ApiAddresses:WebApiMFG").Value}/User/GetExistingUsers").Result;
+            ret = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UserModel>>(response);
+
+            return ret;
         }
 
         public bool AuthenticateUser(SignInModel pObj)
