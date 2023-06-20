@@ -17,7 +17,7 @@
 <a id="open-modal" class="btn-primary btn-link" data-toggle="modal" data-target="#showmodal">Create user</a>
 
 <div class="container">
-    <table id="gridUsers" class="table table-dark">
+    <table id="gridUsers" class="table ">
         <thead>
             <tr>
                 <th class="col-md-1">ID</th>
@@ -27,6 +27,7 @@
                 <th class="col-md-1">Terms of Use</th>
                 <th class="col-md-1">Privacy Policy</th>
                 <th class="col-md-1">Creation Date</th>
+                <th class="col-md-1">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +56,10 @@
                         <td class="col-md-1">
                             @item.CreationDate
                         </td>
+                        <td class="col-md-1">
+                            @*<i class="bi bi-trash"></i>*@
+                            <input id="btnDeleteUser" type="button" action="" asp-action="Delete" value="delete" />
+                        </td>
                     </tr>
                 }
             }
@@ -65,3 +70,31 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    $("#btnDeleteUser").click(function () {
+        /*alert('Teste');*/
+
+        $.ajax({
+            type: "POST",
+            /*  url: "/JQueryAjaxCall/AjaxPostCall",*/
+            url: "/JQueryAjaxCall/AjaxPostCall",
+            data: JSON.stringify(employee),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response != null) {
+                    alert("Name : " + response.Name + ", Designation : " + response.Designation + ", Location :" + response.Location);
+                } else {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+</script>

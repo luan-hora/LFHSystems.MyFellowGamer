@@ -21,6 +21,11 @@ namespace LFHSystems.MyFellowGamer.Repository
             _connection = new SqlConnectionFactory(configuration);
         }
 
+        public int Delete(PublisherModel pObj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<PublisherModel> GetAll()
         {
             throw new NotImplementedException();

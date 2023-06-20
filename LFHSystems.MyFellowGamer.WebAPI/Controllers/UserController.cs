@@ -33,5 +33,15 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
 
             return Json(ret);
         }
+
+        [HttpGet]
+        [Route("DeleteUser")]
+        public JsonResult DeleteUser(int pId)
+        {
+            int ret = 0;
+            repo.Delete(new UserModel() { ID = pId });
+
+            return Json(ret);
+        }
     }
 }

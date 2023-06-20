@@ -22,6 +22,35 @@ namespace LFHSystems.MyFellowGamer.Repository
             _connection = new SqlConnectionFactory(configuration);
         }
 
+        public int Delete(UserModel pObj)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                using (var dbConnection = _connection.ConnString())
+                {
+                    dbConnection.Open();
+
+                    rowsAffected = dbConnection.Execute("dbo.sp_delete_tb_user", new
+                    {
+                        idUser = pObj.ID
+                    }, commandType: CommandType.StoredProcedure);
+
+                    dbConnection.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return rowsAffected;
+        }
+
         public IEnumerable<UserModel> GetAll()
         {
             List<UserModel> ret = null;
@@ -33,9 +62,9 @@ namespace LFHSystems.MyFellowGamer.Repository
                 using (var dbConnection = _connection.ConnString())
                 {
                     dbConnection.Open();
-                    ret = dbConnection.Query<UserModel>(sqlQuery.ToString(), commandType: CommandType.Text).ToList();                    
+                    ret = dbConnection.Query<UserModel>(sqlQuery.ToString(), commandType: CommandType.Text).ToList();
                     dbConnection.Close();
-                }                                
+                }
             }
             catch (SqlException ex)
             {
@@ -113,6 +142,8 @@ namespace LFHSystems.MyFellowGamer.Repository
                 throw ex;
             }
         }
+
+
 
         public void Update(UserModel pObj)
         {

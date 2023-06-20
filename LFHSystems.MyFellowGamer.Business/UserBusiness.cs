@@ -17,6 +17,13 @@ namespace LFHSystems.MyFellowGamer.Business
         {
         }
 
+        public int DeleteUser(int userID)
+        {
+            int ret = 0;
+
+            return ret;
+        }
+
         public UserModel SignupNewUser(UserModel pObj)
         {
             pObj.CreationDate = DateTime.Now;
