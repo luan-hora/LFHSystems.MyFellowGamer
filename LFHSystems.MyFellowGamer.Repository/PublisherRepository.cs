@@ -15,11 +15,19 @@ namespace LFHSystems.MyFellowGamer.Repository
     {
         private IConfiguration _configuration;
         private IConnectionFactory _connection;
-        public PublisherRepository(IConfiguration configuration)
+        private readonly MyDbContext ctx;
+        public PublisherRepository(IConfiguration configuration, MyDbContext ctx)
         {
-            _configuration = configuration;
+            _configuration = configuration;            
             _connection = new SqlConnectionFactory(configuration);
+            this.ctx = ctx;
         }
+
+        //private readonly MyContext ctx;
+        //public UserRepository(MyContext ctx)
+        //{
+        //    this.ctx = ctx;
+        //}
 
         public int Delete(PublisherModel pObj)
         {
@@ -45,20 +53,23 @@ namespace LFHSystems.MyFellowGamer.Repository
         {
             try
             {
-                using (var dbConnection = _connection.ConnString())
-                {
-                    dbConnection.Open();
+                ctx.Publisher.Add(pObj);
+                ctx.SaveChanges();
 
-                    int id = dbConnection.Execute("dbo.sp_insert_tb_publishers", new
-                    {
-                        publisherName = pObj.PublisherName,
-                        creationDate = pObj.CreationDate
-                    }, commandType: CommandType.StoredProcedure);
+                //using (var dbConnection = _connection.ConnString())
+                //{
+                //    dbConnection.Open();
 
-                    pObj.ID = id;
+                //    int id = dbConnection.Execute("dbo.sp_insert_tb_publishers", new
+                //    {
+                //        publisherName = pObj.PublisherName,
+                //        creationDate = pObj.CreationDate
+                //    }, commandType: CommandType.StoredProcedure);
 
-                    dbConnection.Close();
-                }
+                //    pObj.ID = id;
+
+                //    dbConnection.Close();
+                //}
 
                 //return new Task(pObj>;
             }

@@ -12,7 +12,9 @@ using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.Repository;
 using LFHSystems.MyFellowGamer.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,12 +27,34 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     public class PublisherController : Controller
     {
         IConfiguration _configuration;
+        ServiceCollection _services;
         PublisherRepository repo;
-        public PublisherController(IConfiguration configuration)
+        MyDbContext ctx;
+        public PublisherController(IConfiguration configuration, MyDbContext ctx = null)
         {
             _configuration = configuration;
+            //this.ctx = ctx ?? GetInMemoryDBContext();
+            this.ctx = ctx ?? ConfigureDbContextManually();
+            repo = new PublisherRepository(_configuration, ctx);
+        }
 
-            repo = new PublisherRepository(_configuration);
+        //protected MyContext ctx;
+        //public BaseTest(MyContext ctx = null)
+        //{
+        //    this.ctx = ctx ?? GetInMemoryDBContext();
+        //}
+
+        protected MyDbContext ConfigureDbContextManually()
+        {
+            var serviceProvider = new ServiceCollection()
+                .AddEntityFrameworkSqlServer()
+                .BuildServiceProvider();
+            var builder = new DbContextOptionsBuilder<MyDbContext>();
+            var options = builder.UseSqlServer(_configuration.GetConnectionString("MyFellowGamerConnString")).UseInternalServiceProvider(serviceProvider).Options;
+            MyDbContext dbContext = new MyDbContext(options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            return dbContext;
         }
 
         [HttpPost]
