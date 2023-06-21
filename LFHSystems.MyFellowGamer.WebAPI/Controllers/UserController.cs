@@ -35,7 +35,7 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("DeleteUser")]
+        [Route("DeleteUser/{pId}")]
         public JsonResult DeleteUser(int pId)
         {
             int ret = 0;

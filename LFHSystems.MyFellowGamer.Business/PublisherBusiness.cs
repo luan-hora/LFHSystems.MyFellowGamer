@@ -25,6 +25,17 @@ namespace LFHSystems.MyFellowGamer.Business
             return pObj;
         }
 
+        public List<PublisherModel> GetExistingPublishers(PublisherModel pObj)
+        {
+            List<PublisherModel> ret;
+
+            StringContent content = new StringContent(pObj.ToJson(), Encoding.UTF8, "application/json");
+            string response = APIConsume.ApiGetAsync($"{_configuration.GetSection("ApiAddresses:WebApiMFG").Value}/Publisher/GetExistingPublishers").Result;
+            ret = Newtonsoft.Json.JsonConvert.DeserializeObject<List<PublisherModel>>(response);
+
+            return ret;
+        }
+
         public override bool ValidateModel(PublisherModel pObj)
         {
             return true;

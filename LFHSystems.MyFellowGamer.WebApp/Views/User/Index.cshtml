@@ -57,8 +57,9 @@
                             @item.CreationDate
                         </td>
                         <td class="col-md-1">
-                            @*<i class="bi bi-trash"></i>*@
-                            <input id="btnDeleteUser" type="button" action="" asp-action="Delete" value="delete" />
+                            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                         </td>
                     </tr>
                 }

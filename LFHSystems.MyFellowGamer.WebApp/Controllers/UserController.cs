@@ -92,7 +92,9 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         // GET: UserController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            usrBus.DeleteUser(id);
+
+            return RedirectToAction("Index");
         }
 
         // POST: UserController/Delete/5

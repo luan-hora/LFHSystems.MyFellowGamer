@@ -6,6 +6,8 @@ using LFHSystems.MyFellowGamer.WebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
 
 namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 {
@@ -29,6 +31,21 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
             return View();
         }
 
+        public ActionResult List()
+        {
+            List<PublisherViewModel> lstPublishers = new List<PublisherViewModel>();
+            try
+            {
+                lstPublishers = _mapper.Map<List<PublisherViewModel>>(usrPub.GetExistingPublishers(new Model.PublisherModel() { }));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return View(lstPublishers);
+        }
+
         // GET: PublisherController/Details/5
         public ActionResult Details(int id)
         {
@@ -46,7 +63,7 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
 
         // POST: PublisherController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]        
+        [ValidateAntiForgeryToken]
         public IActionResult Create([FromForm] PublisherViewModel pObj)
         {
             try
@@ -90,7 +107,7 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
         // GET: PublisherController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         // POST: PublisherController/Delete/5

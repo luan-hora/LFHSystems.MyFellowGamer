@@ -21,6 +21,9 @@ namespace LFHSystems.MyFellowGamer.Business
         {
             int ret = 0;
 
+            StringContent content = new StringContent(userID.ToJson(), Encoding.UTF8, "application/json");
+            string response = APIConsume.ApiGetAsync($"{_configuration.GetSection("ApiAddresses:WebApiMFG").Value}/User/DeleteUser/{userID}").Result;
+
             return ret;
         }
 

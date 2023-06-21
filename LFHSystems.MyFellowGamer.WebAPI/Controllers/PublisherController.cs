@@ -1,24 +1,11 @@
-﻿//using LFHSystems.MyFellowGamer.Model;
-//using LFHSystems.MyFellowGamer.Repository;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.Extensions.Configuration;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-
-using LFHSystems.MyFellowGamer.Business;
-using LFHSystems.MyFellowGamer.Model;
+﻿using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.Repository;
-using LFHSystems.MyFellowGamer.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
 {
@@ -27,22 +14,14 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     public class PublisherController : Controller
     {
         IConfiguration _configuration;
-        ServiceCollection _services;
         PublisherRepository repo;
         MyDbContext ctx;
         public PublisherController(IConfiguration configuration, MyDbContext ctx = null)
         {
             _configuration = configuration;
-            //this.ctx = ctx ?? GetInMemoryDBContext();
             this.ctx = ctx ?? ConfigureDbContextManually();
-            repo = new PublisherRepository(_configuration, ctx);
+            repo = new PublisherRepository(ctx);
         }
-
-        //protected MyContext ctx;
-        //public BaseTest(MyContext ctx = null)
-        //{
-        //    this.ctx = ctx ?? GetInMemoryDBContext();
-        //}
 
         protected MyDbContext ConfigureDbContextManually()
         {
@@ -66,6 +45,16 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
             repo.Insert(ref pPublisher);
 
             return Json(pPublisher);
+        }
+
+        [HttpGet]
+        [Route("GetExistingPublishers")]
+        public JsonResult GetExistingUsers()
+        {
+            IEnumerable<PublisherModel> ret;
+            ret = repo.GetAll();
+
+            return Json(ret);
         }
 
         //// GET: api/<PublisherController>

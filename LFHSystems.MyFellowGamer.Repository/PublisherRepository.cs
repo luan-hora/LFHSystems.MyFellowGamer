@@ -1,33 +1,18 @@
 ﻿using LFHSystems.MyFellowGamer.Interface;
 using LFHSystems.MyFellowGamer.Model;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using System.Data;
 
 namespace LFHSystems.MyFellowGamer.Repository
 {
     public class PublisherRepository : ICrud<PublisherModel>
     {
-        private IConfiguration _configuration;
-        private IConnectionFactory _connection;
         private readonly MyDbContext ctx;
-        public PublisherRepository(IConfiguration configuration, MyDbContext ctx)
+        public PublisherRepository(MyDbContext ctx)
         {
-            _configuration = configuration;            
-            _connection = new SqlConnectionFactory(configuration);
             this.ctx = ctx;
         }
-
-        //private readonly MyContext ctx;
-        //public UserRepository(MyContext ctx)
-        //{
-        //    this.ctx = ctx;
-        //}
 
         public int Delete(PublisherModel pObj)
         {
@@ -36,7 +21,7 @@ namespace LFHSystems.MyFellowGamer.Repository
 
         public IEnumerable<PublisherModel> GetAll()
         {
-            throw new NotImplementedException();
+            return ctx.Publisher;
         }
 
         public PublisherModel GetByParameter(PublisherModel pObj)
