@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LFHSystems.MyFellowGamer.Business;
+using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.WebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,8 +31,6 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
             try
             {
                 lstUsers = _mapper.Map<List<UserViewModel>>(usrBus.GetExistingUsers(new Model.UserModel() { }));
-
-                //lstUsers.Add(new UserViewModel() { CreationDate = DateTime.Now, Email = "anything@gmail.com", ID = 1, PIN = "123456789", PrivacyPolicy = true, TermsOfUse = true, Username = "qualquer_um" });
             }
             catch (Exception ex)
             {
@@ -109,6 +108,27 @@ namespace LFHSystems.MyFellowGamer.WebApp.Controllers
             catch
             {
                 return View();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SignUpUser(UserViewModel pObj)
+        {
+            try
+            {
+                UserModel ret = usrBus.SignupNewUser(_mapper.Map<UserModel>(pObj));
+
+                pObj = _mapper.Map<UserViewModel>(ret);
+
+                ViewBag.successMessage = "User signUp success";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.failureMessage = "Failure";
+
+                throw;
             }
         }
     }

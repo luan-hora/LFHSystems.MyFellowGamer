@@ -16,12 +16,14 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     public class LoginController : Controller
     {
         IConfiguration _configuration;
-        UserRepository repo;
-        public LoginController(IConfiguration configuration)
+        readonly UserRepository repo;
+        readonly MyDbContext _ctx;
+        public LoginController(IConfiguration configuration, MyDbContext ctx)
         {
             _configuration = configuration;
+            this._ctx = ctx;
 
-            repo = new UserRepository(_configuration);
+            repo = new UserRepository(_configuration, _ctx);
         }
 
         [HttpPost]
@@ -57,8 +59,7 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         [Route("GetUserForLogin/{pObj}")]
         public UserModel GetUserForLogin(string pObj)
         {
-            UserModel ret = null;
-            UserRepository repo = new UserRepository(_configuration);
+            UserModel ret;
 
             UserModel param = pObj.DeserializeFromJson<UserModel>();
             ret = repo.GetByParameter(param);
@@ -70,8 +71,7 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         public UserModel GetUserById(int id)
         {
             IEnumerable<UserModel> ret = new List<UserModel>();
-
-            ret = PrepareMockUserList();
+                        
             return ret.Where(a => a.ID == id).FirstOrDefault();
         }
 
@@ -79,24 +79,9 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         [Route("GetAllUsers")]
         public IEnumerable<UserModel> GetAllUsers()
         {
-            IEnumerable<UserModel> ret = new List<UserModel>();
-            ret = PrepareMockUserList();
+            IEnumerable<UserModel> ret = new List<UserModel>();            
 
             return ret;
-        }
-
-        #region Teste
-
-        private IEnumerable<UserModel> PrepareMockUserList()
-        {
-            List<UserModel> ret = new List<UserModel>();
-            ret.Add(new UserModel() { ID = 1 });
-            ret.Add(new UserModel() { ID = 2 });
-            ret.Add(new UserModel() { ID = 3 });
-
-            return ret;
-        }
-
-        #endregion 
+        }                
     }
 }

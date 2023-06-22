@@ -1,6 +1,3 @@
-using LFHSystems.MyFellowGamer.Interface;
-using LFHSystems.MyFellowGamer.Model;
-//using LFHSystems.MyFellowGamer.Repository;
 using LFHSystems.MyFellowGamer.WebApp.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

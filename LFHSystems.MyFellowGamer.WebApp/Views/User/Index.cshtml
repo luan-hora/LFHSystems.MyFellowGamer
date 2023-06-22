@@ -57,8 +57,8 @@
                             @item.CreationDate
                         </td>
                         <td class="col-md-1">
-                            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                            @Html.ActionLink("Edit", "Edit", new { id=item.ID })
+                            @*@Html.ActionLink("Details", "Details", new { id=item.ID  })*@
                             @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                         </td>
                     </tr>
@@ -72,30 +72,30 @@
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-<script type="text/javascript">
-    $("#btnDeleteUser").click(function () {
-        /*alert('Teste');*/
+@*<script type="text/javascript">
+        $("#btnDeleteUser").click(function () {
+            /*alert('Teste');*/
 
-        $.ajax({
-            type: "POST",
-            /*  url: "/JQueryAjaxCall/AjaxPostCall",*/
-            url: "/JQueryAjaxCall/AjaxPostCall",
-            data: JSON.stringify(employee),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (response) {
-                if (response != null) {
-                    alert("Name : " + response.Name + ", Designation : " + response.Designation + ", Location :" + response.Location);
-                } else {
-                    alert("Something went wrong");
+            $.ajax({
+                type: "POST",
+                /*  url: "/JQueryAjaxCall/AjaxPostCall",*/
+                url: "/JQueryAjaxCall/AjaxPostCall",
+                data: JSON.stringify(employee),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response != null) {
+                        alert("Name : " + response.Name + ", Designation : " + response.Designation + ", Location :" + response.Location);
+                    } else {
+                        alert("Something went wrong");
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
                 }
-            },
-            failure: function (response) {
-                alert(response.responseText);
-            },
-            error: function (response) {
-                alert(response.responseText);
-            }
+            });
         });
-    });
-</script>
+    </script>*@

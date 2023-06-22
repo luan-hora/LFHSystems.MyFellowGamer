@@ -14,11 +14,11 @@ namespace LFHSystems.MyFellowGamer.Repository
 {
     public class UserRepository : ICrud<UserModel>
     {
-        private IConfiguration _configuration;
-        private IConnectionFactory _connection;
-        public UserRepository(IConfiguration configuration)
+        MyDbContext _ctx;
+        private readonly IConnectionFactory _connection;
+        public UserRepository(IConfiguration configuration, MyDbContext ctx)
         {
-            _configuration = configuration;
+            this._ctx = ctx;
             _connection = new SqlConnectionFactory(configuration);
         }
 
@@ -76,6 +76,11 @@ namespace LFHSystems.MyFellowGamer.Repository
             }
 
             return ret;
+        }
+
+        public IEnumerable<UserModel> GetAll_EFCore()
+        {
+            return _ctx.User;
         }
 
         public UserModel GetByParameter(UserModel pObj)

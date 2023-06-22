@@ -1,13 +1,8 @@
-﻿using LFHSystems.MyFellowGamer.Business;
-using LFHSystems.MyFellowGamer.Model;
+﻿using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.Repository;
-using LFHSystems.MyFellowGamer.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
 {
@@ -15,21 +10,20 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        IConfiguration _configuration;
-        UserRepository repo;
-        public UserController(IConfiguration configuration)
+        readonly UserRepository repo;
+        readonly MyDbContext _ctx;
+        public UserController(IConfiguration config, MyDbContext context)
         {
-            _configuration = configuration;
-
-            repo = new UserRepository(_configuration);
+            _ctx = context;
+            repo = new UserRepository(config, _ctx);
         }
 
         [HttpGet]
         [Route("GetExistingUsers")]
         public JsonResult GetExistingUsers()
         {
-            List<UserModel> ret = null;
-            ret = repo.GetAll()?.ToList();
+            IEnumerable<UserModel> ret;
+            ret = repo.GetAll_EFCore();
 
             return Json(ret);
         }

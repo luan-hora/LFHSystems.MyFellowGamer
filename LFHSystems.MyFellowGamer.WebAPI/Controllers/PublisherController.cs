@@ -1,9 +1,7 @@
 ﻿using LFHSystems.MyFellowGamer.Model;
 using LFHSystems.MyFellowGamer.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 
@@ -13,38 +11,42 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
     [ApiController]
     public class PublisherController : Controller
     {
-        IConfiguration _configuration;
-        PublisherRepository repo;
-        MyDbContext ctx;
-        public PublisherController(IConfiguration configuration, MyDbContext ctx = null)
+        readonly PublisherRepository repo;
+        readonly MyDbContext ctx;
+        public PublisherController(IConfiguration configuration, MyDbContext context)
         {
-            _configuration = configuration;
-            this.ctx = ctx ?? ConfigureDbContextManually();
-            repo = new PublisherRepository(ctx);
-        }
-
-        protected MyDbContext ConfigureDbContextManually()
-        {
-            var serviceProvider = new ServiceCollection()
-                .AddEntityFrameworkSqlServer()
-                .BuildServiceProvider();
-            var builder = new DbContextOptionsBuilder<MyDbContext>();
-            var options = builder.UseSqlServer(_configuration.GetConnectionString("MyFellowGamerConnString")).UseInternalServiceProvider(serviceProvider).Options;
-            MyDbContext dbContext = new MyDbContext(options);
-            dbContext.Database.EnsureDeleted();
-            dbContext.Database.EnsureCreated();
-            return dbContext;
+            this.ctx = context;
+            repo = new PublisherRepository(configuration, ctx);
         }
 
         [HttpPost]
         [Route("Insert")]
-        //public async Task<ActionResult<PublisherModel>> Insert([FromBody] PublisherModel pPublisher)
         public JsonResult Insert([FromBody] PublisherModel pPublisher)
         {
             pPublisher.CreationDate = DateTime.Now;
-            repo.Insert(ref pPublisher);
+            repo.Insert_EFCore(ref pPublisher);
 
             return Json(pPublisher);
+        }
+
+        [HttpPost]
+        [Route("Update")]
+        public JsonResult Update([FromBody] PublisherModel pPublisher)
+        {
+            pPublisher.CreationDate = DateTime.Now; //Add an update date later (Maybe)
+            repo.Update_EFCore(pPublisher);
+
+            return Json(pPublisher);
+        }
+
+        [HttpGet]
+        [Route("DeleteUser/{pId}")]
+        public JsonResult DeleteUser(int pId)
+        {
+            int ret = 0;
+            repo.Delete_EFCore(new PublisherModel() { ID = pId });
+
+            return Json(ret);
         }
 
         [HttpGet]
@@ -52,41 +54,9 @@ namespace LFHSystems.MyFellowGamer.WebAPI.Controllers
         public JsonResult GetExistingUsers()
         {
             IEnumerable<PublisherModel> ret;
-            ret = repo.GetAll();
+            ret = repo.GetAll_EFCore();
 
             return Json(ret);
         }
-
-        //// GET: api/<PublisherController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/<PublisherController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/<PublisherController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/<PublisherController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<PublisherController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
