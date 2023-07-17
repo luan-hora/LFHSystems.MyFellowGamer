@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TDD", "TDD", "{C0C2B6D3-AAA1-42C3-86F8-E61AB029379F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFHSystems.MyFellowGamer.UnitTesting", "LFHSystems.MyFellowGamer.UnitTesting\LFHSystems.MyFellowGamer.UnitTesting.csproj", "{26248DEA-4B79-4242-A092-4C173720B2A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LFHSystems.MyFellowGamer.UnitTesting", "LFHSystems.MyFellowGamer.UnitTesting\LFHSystems.MyFellowGamer.UnitTesting.csproj", "{26248DEA-4B79-4242-A092-4C173720B2A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

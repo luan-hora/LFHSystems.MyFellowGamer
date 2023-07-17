@@ -40,5 +40,9 @@ namespace LFHSystems.MyFellowGamer.Business
         {
             return true;
         }
+
+        public override void GenericMethod(PublisherModel pObj)
+        {
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace LFHSystems.MyFellowGamer.Business
         }
 
         public abstract bool ValidateModel(T pObj);
+        public virtual void GenericMethod(T pObj) { throw new NotImplementedException(); } //Not in use
     }
 }
