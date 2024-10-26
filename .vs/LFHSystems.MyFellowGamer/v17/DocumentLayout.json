@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26248DEA-4B79-4242-A092-4C173720B2A5}|LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.unittesting\\lfhsystems.myfellowgamer.unittesting.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{26248DEA-4B79-4242-A092-4C173720B2A5}|LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj|solutionrelative:lfhsystems.myfellowgamer.unittesting\\lfhsystems.myfellowgamer.unittesting.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AF24476-FF02-4BD1-A640-209802CF2922}|LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.webapp\\lfhsystems.myfellowgamer.webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6AF24476-FF02-4BD1-A640-209802CF2922}|LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj|solutionrelative:lfhsystems.myfellowgamer.webapp\\lfhsystems.myfellowgamer.webapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26248DEA-4B79-4242-A092-4C173720B2A5}|LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.unittesting\\publisherunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26248DEA-4B79-4242-A092-4C173720B2A5}|LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj|solutionrelative:lfhsystems.myfellowgamer.unittesting\\publisherunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}|LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.utils\\lfhsystems.myfellowgamer.utils.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DCDFFBBC-A0A6-431C-BB94-87F1A3320094}|LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj|solutionrelative:lfhsystems.myfellowgamer.utils\\lfhsystems.myfellowgamer.utils.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}|LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.interface\\lfhsystems.myfellowgamer.interface.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{15D3A72F-7D00-4E92-9DD2-EFFC559779C9}|LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj|solutionrelative:lfhsystems.myfellowgamer.interface\\lfhsystems.myfellowgamer.interface.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{365F234B-CB10-46D5-AAFD-01D1C04426A7}|LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.repository\\lfhsystems.myfellowgamer.repository.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{365F234B-CB10-46D5-AAFD-01D1C04426A7}|LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj|solutionrelative:lfhsystems.myfellowgamer.repository\\lfhsystems.myfellowgamer.repository.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}|LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.model\\lfhsystems.myfellowgamer.model.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{77E17A18-C410-41FE-9C4D-0C0EAA92E41C}|LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj|solutionrelative:lfhsystems.myfellowgamer.model\\lfhsystems.myfellowgamer.model.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E7711ED-673A-4874-A088-9CBEE4C68E69}|LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.business\\lfhsystems.myfellowgamer.business.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5E7711ED-673A-4874-A088-9CBEE4C68E69}|LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj|solutionrelative:lfhsystems.myfellowgamer.business\\lfhsystems.myfellowgamer.business.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}|LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj|c:\\projetos_lfhsystems\\lfhsystems.myfellowgamer\\lfhsystems.myfellowgamer.webapi\\lfhsystems.myfellowgamer.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F5E01687-6D9B-42BC-92AF-2EC9C7593E74}|LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj|solutionrelative:lfhsystems.myfellowgamer.webapi\\lfhsystems.myfellowgamer.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{80454082-9ab8-47d4-af23-82bf6739e2a9}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:32:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:31:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:30:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LFHSystems.MyFellowGamer.UnitTesting",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.UnitTesting\\LFHSystems.MyFellowGamer.UnitTesting.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:20:06.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LFHSystems.MyFellowGamer.WebApp",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.WebApp\\LFHSystems.MyFellowGamer.WebApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:19:54.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PublisherUnit.cs",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.UnitTesting\\PublisherUnit.cs",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.UnitTesting\\PublisherUnit.cs",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.UnitTesting\\PublisherUnit.cs",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.UnitTesting\\PublisherUnit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T17:19:37.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LFHSystems.MyFellowGamer.Utils",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.Utils\\LFHSystems.MyFellowGamer.Utils.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:19:24.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LFHSystems.MyFellowGamer.Interface",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.Interface\\LFHSystems.MyFellowGamer.Interface.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:19:18.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LFHSystems.MyFellowGamer.Repository",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.Repository\\LFHSystems.MyFellowGamer.Repository.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:19:10.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LFHSystems.MyFellowGamer.Model",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.Model\\LFHSystems.MyFellowGamer.Model.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:19:02.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LFHSystems.MyFellowGamer.Business",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.Business\\LFHSystems.MyFellowGamer.Business.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:18:50.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LFHSystems.MyFellowGamer.WebAPI",
+              "DocumentMoniker": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj",
+              "RelativeDocumentMoniker": "LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj",
+              "ToolTip": "C:\\Projetos_LFHSystems\\LFHSystems.MyFellowGamer\\LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj",
+              "RelativeToolTip": "LFHSystems.MyFellowGamer.WebAPI\\LFHSystems.MyFellowGamer.WebAPI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-26T17:18:23.512Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
